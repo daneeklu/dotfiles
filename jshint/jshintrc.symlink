@@ -1,0 +1,69 @@
+{
+
+  // Globals
+  "predef": [
+      "jasmine"
+  ,   "spyOn"
+  ,   "it"
+  ,   "console"
+  ,   "describe"
+  ,   "expect"
+  ,   "_"
+  ,   "io"
+  ,   "beforeEach"
+  ,   "Handlebars"
+  ,   "waits"
+  ,   "waitsFor"
+  ,   "runs"
+  ,   "MathJax"
+  ,   "prettyPrint"
+  ,   "markdown"
+  ,   "Showdown"
+  ,   "should"
+  ,   "before"
+  ,   "after"
+  ,   "beforeEach"
+  ,   "afterEach"
+  ,   "Backbone"
+  ],
+
+  // Environments
+  "node" :    true,
+  "es5" :     true,
+  "browser" : true,
+  "jquery":   true,
+  "devel":    true,
+
+  "indent":    2, // 2 space-indentation
+  "bitwise":   true, // &, | is probably mistype of &&, ||
+  "curly":     true, // Force curly braces
+  "eqeqeq":    true, // No unsafe comparisons
+  "forin":     true, // Require hasOwnProperty
+  "immed":     true, // Force immediate function wrapping
+  "newcap":    true, // Force constructor capitalization
+  "noarg":     true, // No arguments.caller/callee
+  "noempty":   true, // No empty blocks
+  "nonew":     true, // No constructor-calling without new
+  "nomen":     false, // Allow _:s
+  "onevar":    false, // Don't force 1 var per function
+  //"plusplus":  true, // No unary increment/decrement
+  "regexp":    true, // No unsafe . in RegExp
+  "undef":     true, // No use of undefined variables
+  "camelcase": true, // Force camelCase
+  "latedef":   true, // No use of undefined variables
+  "quotmark":  true,
+  "unused":    false,
+  "trailing":  true,
+  "strict":    false,
+  "expr":      true,
+
+  "boss" :    false, // No assignments as comparisons
+  "evil":     false, // No eval()
+  "sub":      false, // No unnecessary [".."] access
+  "laxbreak": false, // Strict line-breaking
+  "laxcomma": true, // I like the comma
+
+  "white": true
+}
+
+// vim:ft=javascript:

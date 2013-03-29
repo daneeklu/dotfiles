@@ -1,0 +1,16 @@
+#!/bin/sh
+
+xrdb -merge $DOTFILES/xorg/solarized/solarized
+xrdb -merge $DOTFILES/xorg/fonts
+xsetroot -cursor_name left_ptr
+xsetroot -solid "#002b36"
+hsetroot -solid "#002b36"
+setxkbmap odsvorak
+xset +fp /usr/share/fonts/local && xset fp rehash
+# TODO: find out more about this
+[ -f ~/.keychain/$HOSTNAME-sh ] && . ~/.keychain/$HOSTNAME-sh 2>/dev/null
+[ -f ~/.keychain/$HOSTNAME-sh-gpg ] && . ~/.keychain/$HOSTNAME-sh-gpg 2>/dev/null
+urxvtd -q -f -o
+$HOME/.dropbox-dist/dropboxd &
+unclutter -root -idle 1&
+exec xmonad

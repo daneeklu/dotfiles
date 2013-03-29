@@ -1,0 +1,12 @@
+export PATH=/usr/local/bin
+export PATH=$PATH:/usr/bin
+export PATH=$PATH:/bin
+export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/usr/sbin
+export PATH=$PATH:/sbin
+export PATH=$PATH:/usr/bin/core_perl
+export PATH=$PATH:$DOTFILES/git/gibo
+export PATH=$PATH:$DOTFILES/arandr
+export PATH=$PATH:$DOTFILES/bin
+export PATH=$PATH:$HOME/.rbenv/bin
+export PATH=$PATH:$HOME/.cabal/bin

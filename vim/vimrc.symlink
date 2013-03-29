@@ -1,0 +1,108 @@
+set nocompatible
+
+" Vundle {
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+source ~/.vim/bundles.vim
+" }
+
+" Additional rcs {
+source ~/.vim/pluginsrc.vim
+source ~/.vim/langsrc.vim
+source ~/.vim/keysrc.vim
+" }
+
+syntax on
+filetype plugin indent on
+set ofu=syntaxcomplete#Complete
+set grepprg=grep\ -nH\ $*
+
+" Theme {
+set background=dark
+let g:solarized_termtrans=0
+colorscheme solarized
+" }
+
+" Status line {
+if has('statusline')
+    set laststatus=2
+    set statusline=   " clear the statusline for when vimrc is reloaded
+    set statusline+=%-2.2n\                      " buffer number
+    set statusline+=%f\                          " file name
+    set statusline+=%h%m%r%w                     " flags
+    set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
+    set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
+    set statusline+=%{&fileformat}]              " file format
+    set statusline+=%=                           " right align
+    set statusline+=%b,0x%-8B\                   " current char
+    set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
+endif
+" }
+
+" Ex-mode {
+set wildmenu " show list instead of just completing
+set wildmode=list:longest,full " command <Tab> completion, list matches, then longest common part, then all.
+set wildignorecase " case insensitive completion in : menu
+" }
+
+" Search- & substitution {
+set incsearch " find as you type search
+set hlsearch " highlight search terms
+set ignorecase " case insensitive search
+set smartcase " case sensitive when uc present
+" }
+
+" Indentation {
+set tabstop=4 " 4 spaces per tab
+set shiftwidth=4 " 4 spaces per autoindent
+set expandtab " insert spaces instead of tabs
+set smartindent " automatically indent when possible
+set autoindent " keep indentation when inserting new line
+set showbreak=... " start soft line breaks with ...
+" }
+
+" History {
+set nobackup " no tilde files
+set undolevels=1000 " maximum number of changes that can be undone
+set history=1000 " keep 1000 lines of command line history
+" }
+
+" Navigation {
+set scrolljump=0 " lines to scroll when cursor leaves screen
+set scrolloff=5 " keep some lines visible when scrolling
+" }
+
+" Brackets {
+set showmatch  " Show matching brackets.
+set mat=5  " Bracket blinking.
+" }
+
+" Encoding & file format {
+set fileformat=unix " Always use unix style linebreaks
+if has("multi-byte")
+    if &termencoding == ""
+        let & termencoding = &encoding
+    endif
+    set encoding=utf-8
+    setglobal fileencoding=utf-8
+    set fileencodings=ucs-bom,utf-8,latin1
+endif
+" }
+
+" Console {
+let $LANG = 'en_US'
+set linespace=0
+set cursorline " show horizontal cursor line
+set number " show line numbers
+set ruler " show the cursor position all the time
+set showcmd	" display incomplete commands
+" }
+
+" Input {
+set backspace=indent,eol,start " idiomatic backspace
+" }
+
+" Autocommands {
+au BufEnter * silent! lcd %:p:h " cd to directory of current file
+" }
