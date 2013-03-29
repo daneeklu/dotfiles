@@ -12,13 +12,14 @@ then
 fi
 
 source $DOTFILES/zsh/antigen/antigen.zsh
+antigen-bundles <<EOB 
+git
+debian
+bundler
+rails3
+mvn
+EOB
 antigen-use oh-my-zsh
-antigen-bundle git
-antigen-bundle debian
-antigen-bundle bundler
-antigen-bundle rails3
-antigen-bundle command-not-found
-antigen-bundle mvn
 antigen-theme blinks
 antigen-apply
 
@@ -32,8 +33,8 @@ do
   source $file
 done
 
-# load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+# load everything but the path and completion files and antigen
+for file in ${${${config_files:#*/path.zsh}:#*/completion.zsh}:#**/antigen.zsh}
 do
   source $file
 done
